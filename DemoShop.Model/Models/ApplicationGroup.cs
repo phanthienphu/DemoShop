@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TeduShop.Model.Models
+namespace DemoShop.Model.Models
 {
     [Table("ApplicationGroups")]
     public class ApplicationGroup

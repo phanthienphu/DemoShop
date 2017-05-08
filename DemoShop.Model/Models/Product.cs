@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Xml.Linq;
 using TeduShop.Model.Abstract;
 
-namespace TeduShop.Model.Models
+namespace DemoShop.Model.Models
 {
     [Table("Products")]
     
