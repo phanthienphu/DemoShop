@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TeduShop.Model.Models
+namespace DemoShop.Model.Models
 {
     [Table("ApplicationRoleGroups")]
     public class ApplicationRoleGroup
@@ -20,10 +20,10 @@ namespace TeduShop.Model.Models
         [Key]
         public string RoleId { set; get; }
 
-        [ForeignKey("RoleId")]
-        public virtual ApplicationRole ApplicationRole { set; get; }
+        //[ForeignKey("RoleId")]
+        //public virtual ApplicationRole ApplicationRole { set; get; }
 
-        [ForeignKey("GroupId")]
-        public virtual ApplicationGroup ApplicationGroup { set; get; }
+        //[ForeignKey("GroupId")]
+        //public virtual ApplicationGroup ApplicationGroup { set; get; }
     }
 }

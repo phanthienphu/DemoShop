@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TeduShop.Model.Models
+namespace DemoShop.Model.Models
 {
     public class ApplicationUserGroup
     {
@@ -19,10 +19,10 @@ namespace TeduShop.Model.Models
         [Column(Order = 2)]
         public int GroupId { set; get; }
 
-        [ForeignKey("UserId")]
-        public virtual ApplicationUser ApplicationUser { set; get; }
+        //[ForeignKey("UserId")]
+        //public virtual ApplicationUser ApplicationUser { set; get; }
 
-        [ForeignKey("GroupId")]
-        public virtual ApplicationGroup ApplicationGroup { set; get; }
+        //[ForeignKey("GroupId")]
+        //public virtual ApplicationGroup ApplicationGroup { set; get; }
     }
 }
