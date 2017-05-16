@@ -25,7 +25,7 @@ namespace DemoShop.Data.Repositories
                         orderby p.CreatedDate descending
                         select p;
 
-            totalRow = query.Count();
+            totalRow = query.Count();// dùng để Excute vào database
 
             query = query.Skip((pageIndex - 1) * pageSize).Take(pageSize);
 
