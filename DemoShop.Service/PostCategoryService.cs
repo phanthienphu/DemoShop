@@ -16,7 +16,7 @@ namespace DemoShop.Service
         IEnumerable<PostCategory> GetAll();
 
         IEnumerable<PostCategory> GetAllByParentId(int parentId);
-
+    
         PostCategory GetById(int id);
 
         void Save();
