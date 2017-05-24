@@ -8,9 +8,9 @@ namespace DemoShop.Service
 {
     public interface IProductService
     {
-        Product Add(Product Product);
+        //Product Add(Product Product);
 
-        void Update(Product Product);
+        //void Update(Product Product);
 
         Product Delete(int id);
 
