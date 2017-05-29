@@ -1,7 +1,6 @@
 ﻿using DemoShop.App.Infrastructure.Core;
 using DemoShop.Model.Models;
 using DemoShop.Service;
-using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
@@ -11,8 +10,9 @@ namespace DemoShop.App.API
     [RoutePrefix("api/postcategory")]
     public class PostCategoryController : ApiControllerBase
     {
-        IPostCategoryService _postCategoryService;
-        public PostCategoryController(IErrorService errorService, IPostCategoryService postCategoryService):base(errorService)
+        private IPostCategoryService _postCategoryService;
+
+        public PostCategoryController(IErrorService errorService, IPostCategoryService postCategoryService) : base(errorService)
         {
             this._postCategoryService = postCategoryService;
         }
@@ -22,27 +22,20 @@ namespace DemoShop.App.API
         {
             return CreateHttpResponse(request, () =>
             {
-                HttpResponseMessage response = null;
-                if (ModelState.IsValid)
-                {
-                    request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
-                }
-                else
-                {
-                    var listCategory = _postCategoryService.GetAll();
+                var listCategory = _postCategoryService.GetAll();
 
-                    response = request.CreateResponse(HttpStatusCode.OK, listCategory);
-                }
+                HttpResponseMessage response = request.CreateResponse(HttpStatusCode.OK, listCategory);
+
                 return response;
             });
         }
 
-        public HttpResponseMessage Post(HttpRequestMessage request,PostCategory postCategory)
+        public HttpResponseMessage Post(HttpRequestMessage request, PostCategory postCategory)
         {
             return CreateHttpResponse(request, () =>
              {
                  HttpResponseMessage response = null;
-                 if(ModelState.IsValid)
+                 if (ModelState.IsValid)
                  {
                      request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
                  }
@@ -68,7 +61,7 @@ namespace DemoShop.App.API
                 }
                 else
                 {
-                     _postCategoryService.Update(postCategory);
+                    _postCategoryService.Update(postCategory);
                     _postCategoryService.Save();
 
                     response = request.CreateResponse(HttpStatusCode.OK);
